@@ -1,8 +1,8 @@
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import { Box } from '@mui/material';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { useState } from 'react';
 import Contact from './screens/Contact';
@@ -12,12 +12,18 @@ export default function App() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <Box sx={{ pb: 7 }}>
+    <Paper sx={{ pb: 10, 
+      width: 300, 
+      height: 300,
+      margin: 'auto', 
+      background: 'white' 
+     }}>
+<Box sx={{p:2}}>
+      {activeTab==0 && <Dial/>}
+      {activeTab==1 && <Contact/>}
+</Box>
 
-      {activeTab==0 && <Dial />}
-      {activeTab==1 && <Contact />}
-
-      <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <Paper sx={{  }} elevation={3}>
         <BottomNavigation
           showLabels
           value={activeTab}
@@ -29,7 +35,6 @@ export default function App() {
           <BottomNavigationAction label="Contact" icon={<FavoriteIcon />} />
         </BottomNavigation>
       </Paper>
-
-    </Box>
+    </Paper>
   );
 }
