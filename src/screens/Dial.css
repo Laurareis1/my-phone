@@ -1,0 +1,11 @@
+.numero{
+    display: flex;
+  border-radius: 4px;
+  gap: 12px;
+  padding:50px;
+  width: 200px;
+  height: 200px;
+}
+.linha1{
+    border-style: none;
+}
